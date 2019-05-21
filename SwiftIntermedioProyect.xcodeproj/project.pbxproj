@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		049567ED2293000C00F095C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049567EC2293000C00F095C5 /* AppDelegate.swift */; };
-		049567EF2293000C00F095C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049567EE2293000C00F095C5 /* ViewController.swift */; };
 		049567F22293000C00F095C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049567F02293000C00F095C5 /* Main.storyboard */; };
 		049567F42293000D00F095C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049567F32293000D00F095C5 /* Assets.xcassets */; };
 		049567F72293000D00F095C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049567F52293000D00F095C5 /* LaunchScreen.storyboard */; };
 		049568022293000D00F095C5 /* SwiftIntermedioProyectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049568012293000D00F095C5 /* SwiftIntermedioProyectTests.swift */; };
 		0495680D2293000D00F095C5 /* SwiftIntermedioProyectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495680C2293000D00F095C5 /* SwiftIntermedioProyectUITests.swift */; };
+		0495681B2293018200F095C5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495681A2293018200F095C5 /* Login.swift */; };
+		0495681D2293040000F095C5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495681C2293040000F095C5 /* Menu.swift */; };
+		049568212293043200F095C5 /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049568202293043200F095C5 /* Registro.swift */; };
+		0495682522933B4C00F095C5 /* Empleados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495682422933B4C00F095C5 /* Empleados.swift */; };
+		4FC36198229455E2007019CF /* Contanctos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC36197229455E2007019CF /* Contanctos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		049567E92293000C00F095C5 /* SwiftIntermedioProyect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIntermedioProyect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049567EC2293000C00F095C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		049567EE2293000C00F095C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		049567F12293000C00F095C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		049567F32293000D00F095C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049567F62293000D00F095C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		049568082293000D00F095C5 /* SwiftIntermedioProyectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftIntermedioProyectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0495680C2293000D00F095C5 /* SwiftIntermedioProyectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIntermedioProyectUITests.swift; sourceTree = "<group>"; };
 		0495680E2293000D00F095C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0495681A2293018200F095C5 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		0495681C2293040000F095C5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		049568202293043200F095C5 /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
+		0495682422933B4C00F095C5 /* Empleados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empleados.swift; sourceTree = "<group>"; };
+		4FC36197229455E2007019CF /* Contanctos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contanctos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				049567EC2293000C00F095C5 /* AppDelegate.swift */,
-				049567EE2293000C00F095C5 /* ViewController.swift */,
+				0495681A2293018200F095C5 /* Login.swift */,
+				0495681C2293040000F095C5 /* Menu.swift */,
+				049568202293043200F095C5 /* Registro.swift */,
+				0495682422933B4C00F095C5 /* Empleados.swift */,
+				4FC36197229455E2007019CF /* Contanctos.swift */,
 				049567F02293000C00F095C5 /* Main.storyboard */,
 				049567F32293000D00F095C5 /* Assets.xcassets */,
 				049567F52293000D00F095C5 /* LaunchScreen.storyboard */,
@@ -256,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049567EF2293000C00F095C5 /* ViewController.swift in Sources */,
+				049568212293043200F095C5 /* Registro.swift in Sources */,
+				0495682522933B4C00F095C5 /* Empleados.swift in Sources */,
+				0495681D2293040000F095C5 /* Menu.swift in Sources */,
+				4FC36198229455E2007019CF /* Contanctos.swift in Sources */,
 				049567ED2293000C00F095C5 /* AppDelegate.swift in Sources */,
+				0495681B2293018200F095C5 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
