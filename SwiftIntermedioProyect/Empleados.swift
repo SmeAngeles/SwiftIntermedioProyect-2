@@ -10,24 +10,41 @@ import UIKit
 
 class Empleados: UIViewController {
     
-    var arrEmpleados: [Empleado] = []
+    @IBOutlet weak var employeeTable: UITableView!
+    
+    var arrEmpleados: [expandedCell] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initArr()
+       callService()
+        employeeTable.delegate = self
+        employeeTable.dataSource = self
     }
-
-    func initArr(){
-        let emp1 = Empleado(aNombre: "Julio", aPass: "123", aEmail: "Julio@gmail.com", aFechaNac: "12/07/13", aNumEmpleado: "12", aTel: "55667788", aPassConfirm: "123")
+    
+    func callService(){
         
-        let emp2 = Empleado(aNombre: "Cesar", aPass: "123", aEmail: "Cesar@gmail.com", aFechaNac: "12/10/13", aNumEmpleado: "12", aTel: "55667788", aPassConfirm: "123")
+        let urlLine = URL(string: "http://www.develogeeks.com/netec/capitulo4/consumoApi/Empleados/getList.php")
+        guard let downloadURL = urlLine else { return }
         
-        let emp3 = Empleado(aNombre: "Mario", aPass: "123", aEmail: "Mario@gmail.com", aFechaNac: "12/04/13", aNumEmpleado: "12", aTel: "55667788", aPassConfirm: "123")
+        var request = URLRequest(url: downloadURL)
+        request.httpMethod = "POST"
         
-        arrEmpleados.append(emp1)
-        arrEmpleados.append(emp2)
-        arrEmpleados.append(emp3)
-        
+        URLSession.shared.dataTask(with: request) { data, urlResponse, error in
+            guard let data = data, error == nil, urlResponse != nil else { return }
+            do{
+                let decoder = JSONDecoder()
+                let downloadEmployee = try decoder.decode(WSStruct.self, from: data)
+                for element in downloadEmployee.data{
+                    let newEmp =  expandedCell(Nombre: element.fullName!, FechaNac: element.birthday!, Corre: element.email!, Direccion: element.address!, Empresa: element.company!, Area: element.area!, Numero: "\(element.idEmployee!)", Antiguedad: element.seniority!, Fecha: element.dateInPayroll!, Edad: element.age!, Cargo:" ", Productos: " ")
+                    self.arrEmpleados.append(newEmp)
+                }
+                DispatchQueue.main.async{
+                    self.employeeTable.reloadData()
+                }
+            } catch {
+                print("Erroorrrrr")
+            }
+            }.resume()
     }
     
     @objc func share(){
@@ -49,14 +66,15 @@ extension Empleados: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "employeeCell", for: indexPath) as! Contanctos
-        
-        cell.lblNombre.text = arrEmpleados[indexPath.row].nombre
-        cell.lblFechaNac.text = arrEmpleados[indexPath.row].fechaNac
-        cell.lblUbicacion.text = "CDMX"
-        cell.lblParentesco.text = "Amigo"
+        cell.set(content: arrEmpleados[indexPath.row])
         cell.btnShare.addTarget(self, action: #selector(share), for: .touchUpInside)
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let content = arrEmpleados[indexPath.row]
+        content.expanded = !content.expanded
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     

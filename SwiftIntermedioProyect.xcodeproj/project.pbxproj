@@ -18,6 +18,8 @@
 		049568212293043200F095C5 /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049568202293043200F095C5 /* Registro.swift */; };
 		0495682522933B4C00F095C5 /* Empleados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495682422933B4C00F095C5 /* Empleados.swift */; };
 		4FC36198229455E2007019CF /* Contanctos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC36197229455E2007019CF /* Contanctos.swift */; };
+		4FC3619A229488DE007019CF /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC36199229488DE007019CF /* Employee.swift */; };
+		4FC3619C22948AC1007019CF /* WSStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3619B22948AC1007019CF /* WSStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		049568202293043200F095C5 /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		0495682422933B4C00F095C5 /* Empleados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empleados.swift; sourceTree = "<group>"; };
 		4FC36197229455E2007019CF /* Contanctos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contanctos.swift; sourceTree = "<group>"; };
+		4FC36199229488DE007019CF /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		4FC3619B22948AC1007019CF /* WSStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				0495682422933B4C00F095C5 /* Empleados.swift */,
 				4FC36197229455E2007019CF /* Contanctos.swift */,
 				049567F02293000C00F095C5 /* Main.storyboard */,
+				4FC36199229488DE007019CF /* Employee.swift */,
+				4FC3619B22948AC1007019CF /* WSStruct.swift */,
 				049567F32293000D00F095C5 /* Assets.xcassets */,
 				049567F52293000D00F095C5 /* LaunchScreen.storyboard */,
 				049567F82293000D00F095C5 /* Info.plist */,
@@ -268,9 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC3619C22948AC1007019CF /* WSStruct.swift in Sources */,
 				049568212293043200F095C5 /* Registro.swift in Sources */,
 				0495682522933B4C00F095C5 /* Empleados.swift in Sources */,
 				0495681D2293040000F095C5 /* Menu.swift in Sources */,
+				4FC3619A229488DE007019CF /* Employee.swift in Sources */,
 				4FC36198229455E2007019CF /* Contanctos.swift in Sources */,
 				049567ED2293000C00F095C5 /* AppDelegate.swift in Sources */,
 				0495681B2293018200F095C5 /* Login.swift in Sources */,
