@@ -64,8 +64,6 @@ class Contanctos: UITableViewCell {
     @IBOutlet weak var btnShare: UIButton!
     
     var expanded: Bool = false
-    var isShareAvailable: Bool = false
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -77,6 +75,14 @@ class Contanctos: UITableViewCell {
         var bithdayDate: Date = convertDate(timeString: content.lblFechaNac)
         var inpayroll: Date = convertDate(timeString: content.lblFecha)
         
+        var isShareAvailable: Bool = false
+        
+        isShareAvailable = isShare(birthday: bithdayDate)
+        if isShareAvailable{
+            btnShare.isHidden = false
+        }else{
+            btnShare.isHidden = true
+        }
         
         self.lblNombre.text = content.lblNombre
         self.lblFechaNac.text = content.expanded ? formatDate(date: bithdayDate) : ""
@@ -91,7 +97,7 @@ class Contanctos: UITableViewCell {
         self.lblCargo.text = content.expanded ? content.lblCargo : ""
         self.lblProductos.text = content.expanded ? content.lblProductos : ""
         self.expanded = false
-        isShare(birthday: bithdayDate)
+
     }
 
     func convertDate(timeString: String?)-> Date{
@@ -122,18 +128,28 @@ class Contanctos: UITableViewCell {
         return ("\(age)")
     }
     
-    func isShare(birthday: Date){
+    func isShare(birthday: Date)-> Bool{
+        var resp = false
         let today = Date()
         let calendar = Calendar.current
+ 
+        let month = calendar.component(.month, from: birthday)
+        let day = calendar.component(.day, from: birthday)
+        let year = calendar.component(.year, from: today)
         
-        let yars = calendar.dateComponents([.year], from: birthday, to: today)
-        let yar = yars.year!
-
-        let dateComponents = calendar.dateComponents([Calendar.Component.day], from: birthday, to: today)
+        var nextb = DateComponents()
+        nextb.day = day
+        nextb.month = month
+        nextb.year = year
         
-        let days = (yar * 365) - dateComponents.day!
-        print(days)
-
+        let nbirth = NSCalendar.current.date(from: nextb)
+        
+        let comp = calendar.dateComponents([.day], from: today, to: nbirth!)
+        
+        if (comp.day! > -1) && (comp.day! < 4){
+            resp = true
+        }
+        return resp
     }
 
 }

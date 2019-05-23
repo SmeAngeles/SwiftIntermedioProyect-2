@@ -43,6 +43,7 @@ class Registro: UIViewController {
         for tf in arrTf{
             if (tf.text?.isEmpty)!{
                 valido = false
+                break
             }else{
                 valido = true
             }
@@ -77,8 +78,7 @@ class Registro: UIViewController {
     }
     
     @IBAction func actGuardar(_ sender: Any) {
-        var valido = true
-        
+        var valido = validateData()
         if valido{
             var newEmpleado = Empleado(aNombre: nombre.text!, aPass: pass.text!, aEmail: email.text!, aFechaNac: tfDate.text!, aNumEmpleado: numEmpleado.text!, aTel: tel.text!, aPassConfirm: confirmPass.text!)
             
