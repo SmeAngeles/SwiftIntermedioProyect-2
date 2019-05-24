@@ -16,9 +16,11 @@ class Menu: UIViewController {
     }
     
     @IBAction func acMostrarContactos(_ sender: Any) {
-        
         performSegue(withIdentifier: "MenuToContactos", sender: nil)
-        
     }
     
+    
+    @IBAction func acMostrarCobranza(_ sender: Any) {
+        performSegue(withIdentifier: "MenuToCobranza", sender: nil)
+    }
 }

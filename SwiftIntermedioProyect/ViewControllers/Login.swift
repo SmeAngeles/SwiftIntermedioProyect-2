@@ -129,23 +129,3 @@ extension Login: registraNuevoEmpleadoDelegate{
     }
 
 }
-
-public class Empleado{
-    var nombre: String
-    var pass: String
-    var email: String
-    var fechaNac: String
-    var numEmpleado: String
-    var tel: String
-    var passConfirm: String
-    
-    init(aNombre: String, aPass: String, aEmail: String,aFechaNac: String, aNumEmpleado:String, aTel:String, aPassConfirm:String){
-        self.nombre = aNombre
-        self.pass = aPass
-        self.email = aEmail
-        self.fechaNac = aFechaNac
-        self.numEmpleado = aNumEmpleado
-        self.tel = aTel
-        self.passConfirm = aPassConfirm
-    }
-}

@@ -17,6 +17,14 @@
 		0495681D2293040000F095C5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495681C2293040000F095C5 /* Menu.swift */; };
 		049568212293043200F095C5 /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049568202293043200F095C5 /* Registro.swift */; };
 		0495682522933B4C00F095C5 /* Empleados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495682422933B4C00F095C5 /* Empleados.swift */; };
+		4F9270832296E2A7000C7FA7 /* cobranzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9270822296E2A7000C7FA7 /* cobranzaCell.swift */; };
+		4F9270862296E3B5000C7FA7 /* Cobranza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9270852296E3B5000C7FA7 /* Cobranza.swift */; };
+		4F9270892296E90D000C7FA7 /* CobranzaEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9270882296E90D000C7FA7 /* CobranzaEmployee.swift */; };
+		4F92708B2296E9D5000C7FA7 /* Ruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92708A2296E9D5000C7FA7 /* Ruta.swift */; };
+		4F92708D2296EA18000C7FA7 /* Empleado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92708C2296EA18000C7FA7 /* Empleado.swift */; };
+		4F92708F22970023000C7FA7 /* CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92708E22970023000C7FA7 /* CRUD.swift */; };
+		4F9270922297079A000C7FA7 /* coreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9270902297079A000C7FA7 /* coreData.xcdatamodeld */; };
+		4F92709422970E6A000C7FA7 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92709322970E6A000C7FA7 /* Maps.swift */; };
 		4FC36198229455E2007019CF /* Contanctos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC36197229455E2007019CF /* Contanctos.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +62,14 @@
 		0495681C2293040000F095C5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		049568202293043200F095C5 /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		0495682422933B4C00F095C5 /* Empleados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empleados.swift; sourceTree = "<group>"; };
+		4F9270822296E2A7000C7FA7 /* cobranzaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cobranzaCell.swift; sourceTree = "<group>"; };
+		4F9270852296E3B5000C7FA7 /* Cobranza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cobranza.swift; sourceTree = "<group>"; };
+		4F9270882296E90D000C7FA7 /* CobranzaEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CobranzaEmployee.swift; sourceTree = "<group>"; };
+		4F92708A2296E9D5000C7FA7 /* Ruta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruta.swift; sourceTree = "<group>"; };
+		4F92708C2296EA18000C7FA7 /* Empleado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empleado.swift; sourceTree = "<group>"; };
+		4F92708E22970023000C7FA7 /* CRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUD.swift; sourceTree = "<group>"; };
+		4F9270912297079A000C7FA7 /* coreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreData.xcdatamodel; sourceTree = "<group>"; };
+		4F92709322970E6A000C7FA7 /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		4FC36197229455E2007019CF /* Contanctos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contanctos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,16 +121,15 @@
 		049567EB2293000C00F095C5 /* SwiftIntermedioProyect */ = {
 			isa = PBXGroup;
 			children = (
-				049567EC2293000C00F095C5 /* AppDelegate.swift */,
-				0495681A2293018200F095C5 /* Login.swift */,
-				0495681C2293040000F095C5 /* Menu.swift */,
-				049568202293043200F095C5 /* Registro.swift */,
-				0495682422933B4C00F095C5 /* Empleados.swift */,
-				4FC36197229455E2007019CF /* Contanctos.swift */,
 				049567F02293000C00F095C5 /* Main.storyboard */,
+				4F9270842296E38E000C7FA7 /* ViewControllers */,
+				4F9270872296E3C3000C7FA7 /* Classes */,
+				049567EC2293000C00F095C5 /* AppDelegate.swift */,
 				049567F32293000D00F095C5 /* Assets.xcassets */,
 				049567F52293000D00F095C5 /* LaunchScreen.storyboard */,
 				049567F82293000D00F095C5 /* Info.plist */,
+				4F92708E22970023000C7FA7 /* CRUD.swift */,
+				4F9270902297079A000C7FA7 /* coreData.xcdatamodeld */,
 			);
 			path = SwiftIntermedioProyect;
 			sourceTree = "<group>";
@@ -135,6 +150,31 @@
 				0495680E2293000D00F095C5 /* Info.plist */,
 			);
 			path = SwiftIntermedioProyectUITests;
+			sourceTree = "<group>";
+		};
+		4F9270842296E38E000C7FA7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0495681A2293018200F095C5 /* Login.swift */,
+				4F92709322970E6A000C7FA7 /* Maps.swift */,
+				0495681C2293040000F095C5 /* Menu.swift */,
+				049568202293043200F095C5 /* Registro.swift */,
+				0495682422933B4C00F095C5 /* Empleados.swift */,
+				4F9270852296E3B5000C7FA7 /* Cobranza.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4F9270872296E3C3000C7FA7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4FC36197229455E2007019CF /* Contanctos.swift */,
+				4F9270822296E2A7000C7FA7 /* cobranzaCell.swift */,
+				4F92708C2296EA18000C7FA7 /* Empleado.swift */,
+				4F9270882296E90D000C7FA7 /* CobranzaEmployee.swift */,
+				4F92708A2296E9D5000C7FA7 /* Ruta.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,11 +309,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				049568212293043200F095C5 /* Registro.swift in Sources */,
+				4F9270862296E3B5000C7FA7 /* Cobranza.swift in Sources */,
+				4F92709422970E6A000C7FA7 /* Maps.swift in Sources */,
 				0495682522933B4C00F095C5 /* Empleados.swift in Sources */,
+				4F9270892296E90D000C7FA7 /* CobranzaEmployee.swift in Sources */,
 				0495681D2293040000F095C5 /* Menu.swift in Sources */,
+				4F92708D2296EA18000C7FA7 /* Empleado.swift in Sources */,
+				4F92708B2296E9D5000C7FA7 /* Ruta.swift in Sources */,
 				4FC36198229455E2007019CF /* Contanctos.swift in Sources */,
+				4F9270832296E2A7000C7FA7 /* cobranzaCell.swift in Sources */,
+				4F9270922297079A000C7FA7 /* coreData.xcdatamodeld in Sources */,
 				049567ED2293000C00F095C5 /* AppDelegate.swift in Sources */,
 				0495681B2293018200F095C5 /* Login.swift in Sources */,
+				4F92708F22970023000C7FA7 /* CRUD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +644,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4F9270902297079A000C7FA7 /* coreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F9270912297079A000C7FA7 /* coreData.xcdatamodel */,
+			);
+			currentVersion = 4F9270912297079A000C7FA7 /* coreData.xcdatamodel */;
+			path = coreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 049567E12293000C00F095C5 /* Project object */;
 }
