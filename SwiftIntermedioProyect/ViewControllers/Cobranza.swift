@@ -27,10 +27,13 @@ class Cobranza: UIViewController {
                         Adeudo: "$4,500",
                         Notas: "Casa color amarillo, referencia: tienda de abarrotes")
         let ruta2 = Ruta(PersonaAvisitar: "Calos Lopez Puentes",
-                         Direccion: "Nuevo Leon",
+                         Direccion: "Calle Rio Lerma 232, Cuauhtemoc, 06500 Ciudad de Mexico",
                          Adeudo: "$1,530",
                          Notas: "Calle cerrada, Casa con puerton rojo")
-        _ = Ruta(PersonaAvisitar: "Cesar Gonzalez Paredes", Direccion: "Napoles", Adeudo: "$10,900", Notas: "Sin Datos")
+        let ruta3 = Ruta(PersonaAvisitar: "Cesar Gonzalez Paredes",
+                Direccion: "Montecito 38, Napoles, 03810 Ciudad de Mexico, CDMX",
+                Adeudo: "$10,900",
+                Notas: "Sin Datos")
         
         
         arrCobranza = [CobranzaEmployee(Nombre: "James Arthur Gosling", Rol: "Entrevistador", Ruta: ruta1),
