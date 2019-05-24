@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class Registro: UIViewController {
     
@@ -18,7 +19,6 @@ class Registro: UIViewController {
     @IBOutlet weak var tel: UITextField!
     @IBOutlet weak var tfDate: UITextField!
     
-    var delegateNuevoEmpleado: registraNuevoEmpleadoDelegate?
     var arrTf: [UITextField] = []
     
     override func viewDidLoad() {
@@ -43,6 +43,7 @@ class Registro: UIViewController {
         for tf in arrTf{
             if (tf.text?.isEmpty)!{
                 valido = false
+                break
             }else{
                 valido = true
             }
@@ -77,19 +78,46 @@ class Registro: UIViewController {
     }
     
     @IBAction func actGuardar(_ sender: Any) {
-        var valido = true
+        let valido = validateData()
         
         if valido{
-            var newEmpleado = Empleado(aNombre: nombre.text!, aPass: pass.text!, aEmail: email.text!, aFechaNac: tfDate.text!, aNumEmpleado: numEmpleado.text!, aTel: tel.text!, aPassConfirm: confirmPass.text!)
             
-            delegateNuevoEmpleado?.obtain(newRegister: newEmpleado)
+            createData()
+            
+            dismiss(animated: true, completion: nil)
         }else{
             showAlert(titulo: "Ups", mensaje: "Datos Incompletos")
 
         }
     }
-}
-
-protocol registraNuevoEmpleadoDelegate {
-    func obtain(newRegister: Empleado)
+    
+    func createData(){
+        // 1.- Refer to persistenContainer from appDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // 2.- Create the context from persistentContainer
+        let manageContext =  appDelegate.persistentContainer.viewContext
+        // 3.- Create an entity with User
+        let userEntity = NSEntityDescription.entity(forEntityName: "Empleado", in: manageContext)!
+        
+        //4.- Create new record with Empleado entity
+        
+        let emp = NSManagedObject(entity: userEntity, insertInto: manageContext)
+        emp.setValue(nombre.text!, forKey: "nombre")
+        emp.setValue(pass.text!, forKey: "pass")
+        emp.setValue(email.text!, forKey: "email")
+        emp.setValue(tfDate.text!, forKey: "fechaNac")
+        emp.setValue(numEmpleado.text!, forKey: "numEmpleado")
+        emp.setValue(tel.text!, forKey: "tel")
+        emp.setValue(confirmPass.text!, forKey: "passConfirm")
+        
+        //5.- Save context
+        do{
+            try manageContext.save()
+            print("saved correctly")
+        }catch{
+            print("Error: \(error)")
+        }
+        
+    }
+    
 }

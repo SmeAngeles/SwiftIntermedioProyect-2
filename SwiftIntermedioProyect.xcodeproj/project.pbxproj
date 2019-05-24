@@ -17,6 +17,8 @@
 		0495681D2293040000F095C5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495681C2293040000F095C5 /* Menu.swift */; };
 		049568212293043200F095C5 /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049568202293043200F095C5 /* Registro.swift */; };
 		0495682522933B4C00F095C5 /* Empleados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495682422933B4C00F095C5 /* Empleados.swift */; };
+		4F92709722982776000C7FA7 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F92709522982776000C7FA7 /* dataModel.xcdatamodeld */; };
+		4F927099229850F7000C7FA7 /* Editar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F927098229850F7000C7FA7 /* Editar.swift */; };
 		4FC36198229455E2007019CF /* Contanctos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC36197229455E2007019CF /* Contanctos.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		0495681C2293040000F095C5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		049568202293043200F095C5 /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		0495682422933B4C00F095C5 /* Empleados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empleados.swift; sourceTree = "<group>"; };
+		4F92709622982776000C7FA7 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
+		4F927098229850F7000C7FA7 /* Editar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editar.swift; sourceTree = "<group>"; };
 		4FC36197229455E2007019CF /* Contanctos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contanctos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,10 +115,12 @@
 				049568202293043200F095C5 /* Registro.swift */,
 				0495682422933B4C00F095C5 /* Empleados.swift */,
 				4FC36197229455E2007019CF /* Contanctos.swift */,
+				4F927098229850F7000C7FA7 /* Editar.swift */,
 				049567F02293000C00F095C5 /* Main.storyboard */,
 				049567F32293000D00F095C5 /* Assets.xcassets */,
 				049567F52293000D00F095C5 /* LaunchScreen.storyboard */,
 				049567F82293000D00F095C5 /* Info.plist */,
+				4F92709522982776000C7FA7 /* dataModel.xcdatamodeld */,
 			);
 			path = SwiftIntermedioProyect;
 			sourceTree = "<group>";
@@ -268,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F927099229850F7000C7FA7 /* Editar.swift in Sources */,
 				049568212293043200F095C5 /* Registro.swift in Sources */,
 				0495682522933B4C00F095C5 /* Empleados.swift in Sources */,
+				4F92709722982776000C7FA7 /* dataModel.xcdatamodeld in Sources */,
 				0495681D2293040000F095C5 /* Menu.swift in Sources */,
 				4FC36198229455E2007019CF /* Contanctos.swift in Sources */,
 				049567ED2293000C00F095C5 /* AppDelegate.swift in Sources */,
@@ -596,6 +604,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4F92709522982776000C7FA7 /* dataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F92709622982776000C7FA7 /* dataModel.xcdatamodel */,
+			);
+			currentVersion = 4F92709622982776000C7FA7 /* dataModel.xcdatamodel */;
+			path = dataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 049567E12293000C00F095C5 /* Project object */;
 }

@@ -8,27 +8,48 @@
 
 import UIKit
 
+class expandedCell{
+    var lblNombre: String?
+    var lblFechaNac: String?
+    var lblCorre: String?
+    var lblDireccion: String?
+    var lblTelefono: String?
+    var expanded: Bool
+    
+    init(Nombre: String, FechaNac: String, Corre: String, Direccion: String, Telefono: String) {
+        self.lblNombre = Nombre
+        self.lblFechaNac = FechaNac
+        self.lblCorre = Corre
+        self.lblDireccion = Direccion
+        self.lblTelefono = Telefono
+        self.expanded = false
+    }
+    
+}
+
 class Contanctos: UITableViewCell {
-    
-    
+
     @IBOutlet weak var lblNombre: UILabel!
     @IBOutlet weak var lblFechaNac: UILabel!
-    @IBOutlet weak var lblEdad: UILabel!
-    @IBOutlet weak var lblUbicacion: UILabel!
-    @IBOutlet weak var lblParentesco: UILabel!
-    @IBOutlet weak var btnShare: UIButton!
+    @IBOutlet weak var lblCorreo: UILabel!
+    @IBOutlet weak var lblDireccion: UILabel!
+    @IBOutlet weak var lblTelefono: UILabel!
+    @IBOutlet weak var btnEditar: UIButton!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func set(content: expandedCell){
+        self.lblNombre.text = content.lblNombre
+        self.lblFechaNac.text = content.lblFechaNac
+        self.lblCorreo.text = content.lblCorre
+        self.lblDireccion.text = content.lblDireccion
+        self.lblTelefono.text = content.lblTelefono
     }
-    
     
 
 }

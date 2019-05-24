@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class Login: UIViewController {
     
@@ -14,19 +15,45 @@ class Login: UIViewController {
     @IBOutlet weak var lblUsuario: UITextField!
     @IBOutlet weak var lblPass: UITextField!
     
-    var sujeto1: Empleado?
+    var sujeto1: EmpleadoClass?
     
-    var arrEmpleados: [Empleado] = []
+    var arrEmpleados: [EmpleadoClass] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initSujeto1()
+        upDateEmpleados()
     }
     
-    func initSujeto1(){
+    func upDateEmpleados(){
+        // 1.- Refer to persistentContainer from appDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        sujeto1 = Empleado(aNombre: "Julio", aPass: "123", aEmail: "Julio@gmail.com", aFechaNac: "12/07/13", aNumEmpleado: "12", aTel: "55667788", aPassConfirm: "123")
-        arrEmpleados.append(sujeto1!)
+        // 2.- Create the context from persistentContainer
+        let manageContext = appDelegate.persistentContainer.viewContext
+        
+        // 3.- Prepare the request of type NSFetchRequest for the entity
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Empleado")
+        
+        do{
+            // 4.- Fetch the result from context
+            let result = try manageContext.fetch(fetchRequest)
+            
+            // 5.- Interate through an array to get value for the specific key
+            for data in result as! [NSManagedObject]{
+                let emp = EmpleadoClass(aNombre: data.value(forKey: "nombre") as! String,
+                                        aPass: data.value(forKey: "pass") as! String,
+                                        aEmail: data.value(forKey: "email") as! String,
+                                        aFechaNac: data.value(forKey: "fechaNac") as! String,
+                                        aNumEmpleado: data.value(forKey: "numEmpleado") as! String,
+                                        aTel: data.value(forKey: "tel") as! String,
+                                        aPassConfirm: data.value(forKey: "passConfirm") as! String)
+                arrEmpleados.append(emp)
+            }
+            
+        }catch{
+            print("Error")
+        }
+        
     }
     
     func validateIsEmpty()->Bool{
@@ -59,7 +86,7 @@ class Login: UIViewController {
     
     func olvidePass(){
         
-        var empData: Empleado?
+        var empData: EmpleadoClass?
         
         let olvidePassAlert =  UIAlertController(title: "Recuperar Contraseña", message: nil, preferredStyle: UIAlertController.Style.alert)
         
@@ -108,29 +135,12 @@ class Login: UIViewController {
     }
     
     @IBAction func acRegistro(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "registro") as! Registro
-        vc.delegateNuevoEmpleado = self
-        present(vc, animated: true, completion: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loginToMenu"{
-            
-        }
+        performSegue(withIdentifier: "LoginToRegistro", sender: nil)
     }
     
 }
 
-extension Login: registraNuevoEmpleadoDelegate{
-    func obtain(newRegister: Empleado) {
-        dismiss(animated: true, completion: nil)
-        arrEmpleados.append(newRegister)
-        print(arrEmpleados)
-    }
-
-}
-
-public class Empleado{
+public class EmpleadoClass{
     var nombre: String
     var pass: String
     var email: String
@@ -138,6 +148,7 @@ public class Empleado{
     var numEmpleado: String
     var tel: String
     var passConfirm: String
+    var direccion:String?
     
     init(aNombre: String, aPass: String, aEmail: String,aFechaNac: String, aNumEmpleado:String, aTel:String, aPassConfirm:String){
         self.nombre = aNombre
@@ -146,6 +157,7 @@ public class Empleado{
         self.fechaNac = aFechaNac
         self.numEmpleado = aNumEmpleado
         self.tel = aTel
+        self.direccion = " "
         self.passConfirm = aPassConfirm
     }
 }
