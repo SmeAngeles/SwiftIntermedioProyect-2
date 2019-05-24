@@ -81,10 +81,8 @@ class Registro: UIViewController {
         let valido = validateData()
         
         if valido{
-            
             createData()
-            
-            dismiss(animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
         }else{
             showAlert(titulo: "Ups", mensaje: "Datos Incompletos")
 

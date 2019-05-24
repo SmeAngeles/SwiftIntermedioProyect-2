@@ -17,7 +17,7 @@ class Login: UIViewController {
     
     var sujeto1: EmpleadoClass?
     
-    var arrEmpleados: [EmpleadoClass] = []
+    var arrEmpleados: [EmpleadoClass] = [EmpleadoClass(aNombre: "Esme", aPass: "123", aEmail: "esme@gmail.com", aFechaNac: "24-May-1993", aNumEmpleado: "12345", aTel: "66778899", aPassConfirm: " ")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +136,12 @@ class Login: UIViewController {
     
     @IBAction func acRegistro(_ sender: Any) {
         performSegue(withIdentifier: "LoginToRegistro", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LoginToRegistro"{
+            
+        }
     }
     
 }

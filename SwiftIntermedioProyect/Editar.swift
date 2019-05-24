@@ -28,7 +28,7 @@ class Editar: UIViewController {
         tfNombre.text = empleado?.nombre
         tfFecha.text = empleado?.fechaNac
         tfCorreo.text = empleado?.email
-        tfDirec.text = empleado?.direccion! ?? " "
+        tfDirec.text = empleado?.direccion
         tfTel.text = empleado?.tel
     }
     

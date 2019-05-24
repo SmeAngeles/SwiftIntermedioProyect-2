@@ -27,14 +27,6 @@ class Empleados: UIViewController {
         do{
             let result = try manageContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject]{
-                let emp = EmpleadoClass(aNombre: data.value(forKey: "nombre") as! String,
-                                        aPass: data.value(forKey: "pass") as! String,
-                                        aEmail: data.value(forKey: "email") as! String,
-                                        aFechaNac: data.value(forKey: "fechaNac") as! String,
-                                        aNumEmpleado: data.value(forKey: "numEmpleado") as! String,
-                                        aTel: data.value(forKey: "tel") as! String,
-                                        aPassConfirm: data.value(forKey: "passConfirm") as! String)
-                arrEmpleados.append(emp)
                 
                 let cellarr: expandedCell?
                 
@@ -44,12 +36,29 @@ class Empleados: UIViewController {
                                                Corre: data.value(forKey: "email") as! String,
                                                Direccion: data.value(forKey: "dicreccion") as! String,
                                                Telefono: data.value(forKey: "tel") as! String)
+                    let emp = EmpleadoClass(aNombre: data.value(forKey: "nombre") as! String,
+                                            aPass: data.value(forKey: "pass") as! String,
+                                            aEmail: data.value(forKey: "email") as! String,
+                                            aFechaNac: data.value(forKey: "fechaNac") as! String,
+                                            aNumEmpleado: data.value(forKey: "numEmpleado") as! String,
+                                            aTel: data.value(forKey: "tel") as! String,
+                                            aPassConfirm: data.value(forKey: "passConfirm") as! String)
+                    emp.direccion = (data.value(forKey: "dicreccion") as! String)
+                    arrEmpleados.append(emp)
                 }else{
                     cellarr = expandedCell(Nombre: data.value(forKey: "nombre") as! String,
                                                FechaNac: data.value(forKey: "fechaNac") as! String,
                                                Corre: data.value(forKey: "email") as! String,
                                                Direccion: " ",
                                                Telefono: data.value(forKey: "tel") as! String)
+                    let emp = EmpleadoClass(aNombre: data.value(forKey: "nombre") as! String,
+                                            aPass: data.value(forKey: "pass") as! String,
+                                            aEmail: data.value(forKey: "email") as! String,
+                                            aFechaNac: data.value(forKey: "fechaNac") as! String,
+                                            aNumEmpleado: data.value(forKey: "numEmpleado") as! String,
+                                            aTel: data.value(forKey: "tel") as! String,
+                                            aPassConfirm: data.value(forKey: "passConfirm") as! String)
+                    arrEmpleados.append(emp)
                 }
                 
                 arrEmpleadosCell.append(cellarr!)
